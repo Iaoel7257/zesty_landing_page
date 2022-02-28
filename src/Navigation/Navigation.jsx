@@ -5,6 +5,7 @@ import Toolbar from '@mui/material/Toolbar'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 import Menu from '@mui/material/Menu'
+import MenuIcon from '@mui/icons-material/Menu'
 import Container from '@mui/material/Container'
 import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
@@ -46,7 +47,9 @@ const ResponsiveAppBar = () => {
 							aria-haspopup='true'
 							onClick={handleOpenNavMenu}
 							color='inherit'
-						></IconButton>
+						>
+							<MenuIcon />
+						</IconButton>
 						<Menu
 							id='menu-appbar'
 							anchorEl={anchorElNav}
@@ -67,7 +70,12 @@ const ResponsiveAppBar = () => {
 						>
 							{pages.map((page) => (
 								<MenuItem key={page} onClick={handleCloseNavMenu}>
-									<Typography textAlign='center'>{page}</Typography>
+									<Link
+										style={{ textDecoration: 'none' }}
+										to={`${page === `Home` ? '/' : `/${page}`}`}
+									>
+										<Typography textAlign='center'>{page}</Typography>
+									</Link>
 								</MenuItem>
 							))}
 						</Menu>
@@ -75,10 +83,12 @@ const ResponsiveAppBar = () => {
 
 					<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
 						{pages.map((page, idx) => (
-							<Link style={{ textDecoration: 'none' }} to={`${page === `Home` ? '/' : `/${page}`}`}>
-								<Button key={page} sx={{ my: 2, color: 'white', display: 'block' }}>
-									{page}
-								</Button>
+							<Link
+								key={page}
+								style={{ textDecoration: 'none' }}
+								to={`${page === `Home` ? '/' : `/${page}`}`}
+							>
+								<Button sx={{ my: 2, color: 'white', display: 'block' }}>{page}</Button>
 							</Link>
 						))}
 					</Box>
