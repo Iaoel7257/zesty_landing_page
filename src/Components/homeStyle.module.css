@@ -1,0 +1,48 @@
+.title {
+	color: #f0701d;
+}
+
+.container {
+	margin: auto;
+	width: 90%;
+	height: 90%;
+	padding: 10px;
+	border: 1px solid #2b8000;
+	border-radius: 5px;
+	margin-top: 10px;
+	line-height: 1.5;
+}
+
+.container h3 {
+	color: #2b8000;
+}
+.container h4 {
+	color: #2b8000;
+}
+
+.container td {
+	color: #2b8000;
+	background-color: #cccccc;
+}
+
+.container button {
+	background-color: #f0701d;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+
+.container button:hover {
+	background-color: rgb(233, 141, 80);
+}
+
+.container strong {
+	font-weight: normal;
+	color: #f0701d;
+}
